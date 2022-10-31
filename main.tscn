@@ -1,0 +1,155 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://AIFollow.gd" type="Script" id=1]
+[ext_resource path="res://RandomPosition.gd" type="Script" id=2]
+[ext_resource path="res://Camera.gd" type="Script" id=3]
+
+[sub_resource type="CapsuleMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_color = Color( 0.235294, 0.133333, 0.929412, 1 )
+
+[sub_resource type="PrismMesh" id=12]
+material = SubResource( 11 )
+
+[sub_resource type="SphereShape" id=17]
+
+[sub_resource type="CapsuleShape" id=2]
+
+[sub_resource type="NavigationMesh" id=3]
+vertices = PoolVector3Array( -20.4603, 0.827083, -8.6865, -18.7103, 0.827083, -10.1865, -12.2103, 0.827083, -18.1865, -22.4603, 0.827083, -34.6865, -33.9603, 0.827083, -34.6865, -33.9603, 0.827083, -28.1865, -33.9603, 0.827083, -7.9365, -20.4603, 0.827083, -7.9365, -20.4603, 0.827083, -8.6865, -33.9603, 0.827083, -14.6865, -33.9603, 0.827083, -21.4365, -33.9603, 0.827083, -14.6865, -20.4603, 0.827083, -8.6865, -12.2103, 0.827083, -18.1865, -10.7103, 0.827083, -34.6865, -22.4603, 0.827083, -34.6865, -12.2103, 0.827083, -18.1865, -10.7103, 0.827083, -19.1865, -10.7103, 0.827083, -34.6865, -22.4603, 0.827083, -34.6865, -33.9603, 0.827083, -28.1865, -33.9603, 0.827083, -21.4365, 34.5397, 0.827083, -24.1865, 34.5397, 0.827083, -34.6865, 23.0397, 0.827083, -34.6865, 19.0397, 0.827083, 6.0635, 20.5397, 0.827083, 8.0635, 34.5397, 0.827083, 8.0635, 34.5397, 0.827083, -2.6865, -10.7103, 0.827083, -34.6865, -10.7103, 0.827083, -19.1865, -8.96034, 0.827083, -18.1865, 0.539661, 0.827083, -34.6865, -8.96034, 0.827083, -18.1865, -2.71034, 0.827083, -12.4365, 3.78966, 0.827083, -6.6865, -8.96034, 0.827083, -18.1865, 3.78966, 0.827083, -6.6865, 11.5397, 0.827083, -0.436504, 34.5397, 0.827083, -13.4365, 23.0397, 0.827083, -34.6865, 11.7897, 0.827083, -34.6865, 11.7897, 0.827083, -34.6865, 0.539661, 0.827083, -34.6865, -8.96034, 0.827083, -18.1865, 11.5397, 0.827083, -0.436504, 19.0397, 0.827083, 6.0635, 34.5397, 0.827083, -2.6865, 34.5397, 0.827083, -13.4365, 34.5397, 0.827083, -13.4365, 34.5397, 0.827083, -24.1865, 23.0397, 0.827083, -34.6865, 19.2897, 5.07708, 8.3135, 18.5397, 5.07708, 7.0635, 16.2897, 5.07708, 5.5635, 14.7897, 5.07708, 13.0635, 9.53966, 5.07708, -0.436504, 2.78966, 5.07708, -6.1865, -4.46034, 5.07708, 4.8135, 3.03966, 5.07708, 11.3135, 14.7897, 5.07708, 13.0635, 16.2897, 5.07708, 5.5635, -3.71034, 5.07708, -12.1865, -10.4603, 5.07708, -17.9365, -11.2103, 5.07708, -17.6865, -17.7103, 5.07708, -9.6865, -19.4603, 5.07708, -8.1865, -11.9603, 5.07708, -1.6865, 3.03966, 5.07708, 11.3135, 10.5397, 5.07708, 18.0635, 14.7897, 5.07708, 13.0635, -3.71034, 5.07708, -12.1865, -11.2103, 5.07708, -17.6865, -17.7103, 5.07708, -9.6865, -11.9603, 5.07708, -1.6865, -4.46034, 5.07708, 4.8135, 2.78966, 5.07708, -6.1865, -10.4603, 0.827083, -17.4365, -10.9603, 0.827083, -17.4365, -10.9603, 0.827083, -16.9365, -4.96034, 0.827083, -12.4365, 18.7897, 0.827083, 8.3135, 18.2897, 0.827083, 7.3135, 16.0397, 0.827083, 5.8135, 16.0397, 0.827083, 5.8135, 14.5397, 0.827083, 4.0635, 12.2897, 0.827083, 2.5635, 14.5397, 0.827083, 12.8135, 18.7897, 0.827083, 8.3135, 16.0397, 0.827083, 5.8135, 12.2897, 0.827083, 2.5635, -4.96034, 0.827083, -12.4365, -10.9603, 0.827083, -16.9365, -18.9603, 0.827083, -8.1865, -11.7103, 0.827083, -1.6865, -4.21034, 0.827083, 4.5635, 0.789661, 0.827083, -7.4365, -4.21034, 0.827083, 4.5635, 6.53966, 0.827083, -2.4365, 0.789661, 0.827083, -7.4365, 3.03966, 0.827083, 11.0635, 10.5397, 0.827083, 17.5635, 14.5397, 0.827083, 12.8135, 12.2897, 0.827083, 2.5635, 6.53966, 0.827083, -2.4365, -4.21034, 0.827083, 4.5635, -8.21034, 0.827083, 3.3135, -13.4603, 0.827083, -1.6865, -17.4603, 0.827083, -4.6865, -20.4603, 0.827083, -7.4365, -20.4603, 0.827083, -7.9365, -33.9603, 0.827083, -7.9365, -33.9603, 0.827083, 2.3135, 8.53966, 0.827083, 17.8135, 3.03966, 0.827083, 12.8135, -2.46034, 0.827083, 8.0635, -8.21034, 0.827083, 3.3135, -33.9603, 0.827083, 23.3135, -33.9603, 0.827083, 33.8135, -22.9603, 0.827083, 33.8135, 10.5397, 0.827083, 33.8135, 10.5397, 0.827083, 19.0635, 8.53966, 0.827083, 17.8135, -0.710339, 0.827083, 33.8135, -33.9603, 0.827083, 12.8135, -33.9603, 0.827083, 23.3135, -22.9603, 0.827083, 33.8135, -17.4603, 0.827083, -4.6865, -20.4603, 0.827083, -7.4365, -33.9603, 0.827083, 2.3135, -33.9603, 0.827083, 12.8135, -11.7103, 0.827083, 33.8135, -0.710339, 0.827083, 33.8135, 8.53966, 0.827083, 17.8135, -8.21034, 0.827083, 3.3135, -17.4603, 0.827083, -4.6865, -33.9603, 0.827083, 12.8135, -22.9603, 0.827083, 33.8135, -11.7103, 0.827083, 33.8135, 8.53966, 0.827083, 17.8135, 22.5397, 0.827083, 33.8135, 34.5397, 0.827083, 33.8135, 34.5397, 0.827083, 27.3135, 11.2897, 0.827083, 19.0635, 10.5397, 0.827083, 19.0635, 10.5397, 0.827083, 33.8135, 34.5397, 0.827083, 14.3135, 34.5397, 0.827083, 8.0635, 20.5397, 0.827083, 8.0635, 16.5397, 0.827083, 13.0635, 12.5397, 0.827083, 17.8135, 11.2897, 0.827083, 19.0635, 10.5397, 0.827083, 33.8135, 22.5397, 0.827083, 33.8135, 34.5397, 0.827083, 27.3135, 34.5397, 0.827083, 20.8135, 12.5397, 0.827083, 17.8135, 10.5397, 0.827083, 33.8135, 22.5397, 0.827083, 33.8135, 34.5397, 0.827083, 20.8135, 34.5397, 0.827083, 14.3135, 16.5397, 0.827083, 13.0635 )
+polygons = [ PoolIntArray( 2, 1, 0 ), PoolIntArray( 5, 4, 3 ), PoolIntArray( 7, 6, 8 ), PoolIntArray( 8, 6, 9 ), PoolIntArray( 11, 10, 12 ), PoolIntArray( 12, 10, 13 ), PoolIntArray( 13, 10, 15 ), PoolIntArray( 13, 15, 14 ), PoolIntArray( 18, 17, 16 ), PoolIntArray( 21, 20, 19 ), PoolIntArray( 24, 23, 22 ), PoolIntArray( 26, 25, 27 ), PoolIntArray( 27, 25, 28 ), PoolIntArray( 30, 29, 31 ), PoolIntArray( 31, 29, 32 ), PoolIntArray( 35, 34, 33 ), PoolIntArray( 37, 36, 38 ), PoolIntArray( 38, 36, 41 ), PoolIntArray( 38, 41, 40 ), PoolIntArray( 38, 40, 39 ), PoolIntArray( 44, 43, 42 ), PoolIntArray( 46, 45, 47 ), PoolIntArray( 47, 45, 48 ), PoolIntArray( 51, 50, 49 ), PoolIntArray( 53, 52, 54 ), PoolIntArray( 54, 52, 55 ), PoolIntArray( 61, 60, 56 ), PoolIntArray( 56, 60, 59 ), PoolIntArray( 56, 59, 58 ), PoolIntArray( 56, 58, 57 ), PoolIntArray( 64, 63, 62 ), PoolIntArray( 67, 66, 65 ), PoolIntArray( 70, 69, 68 ), PoolIntArray( 72, 71, 73 ), PoolIntArray( 73, 71, 74 ), PoolIntArray( 74, 71, 76 ), PoolIntArray( 74, 76, 75 ), PoolIntArray( 78, 77, 79 ), PoolIntArray( 79, 77, 80 ), PoolIntArray( 82, 81, 83 ), PoolIntArray( 86, 85, 84 ), PoolIntArray( 88, 87, 89 ), PoolIntArray( 89, 87, 90 ), PoolIntArray( 91, 96, 92 ), PoolIntArray( 92, 96, 93 ), PoolIntArray( 93, 96, 94 ), PoolIntArray( 94, 96, 95 ), PoolIntArray( 99, 98, 97 ), PoolIntArray( 101, 100, 102 ), PoolIntArray( 102, 100, 103 ), PoolIntArray( 103, 100, 104 ), PoolIntArray( 104, 100, 105 ), PoolIntArray( 108, 107, 106 ), PoolIntArray( 110, 109, 111 ), PoolIntArray( 111, 109, 112 ), PoolIntArray( 114, 113, 115 ), PoolIntArray( 115, 113, 116 ), PoolIntArray( 119, 118, 117 ), PoolIntArray( 121, 120, 122 ), PoolIntArray( 122, 120, 123 ), PoolIntArray( 126, 125, 124 ), PoolIntArray( 128, 127, 129 ), PoolIntArray( 129, 127, 130 ), PoolIntArray( 133, 132, 131 ), PoolIntArray( 135, 134, 136 ), PoolIntArray( 136, 134, 137 ), PoolIntArray( 137, 134, 138 ), PoolIntArray( 138, 134, 139 ), PoolIntArray( 142, 141, 140 ), PoolIntArray( 145, 144, 143 ), PoolIntArray( 147, 146, 148 ), PoolIntArray( 148, 146, 149 ), PoolIntArray( 152, 151, 150 ), PoolIntArray( 155, 154, 153 ), PoolIntArray( 156, 161, 157 ), PoolIntArray( 157, 161, 158 ), PoolIntArray( 158, 161, 159 ), PoolIntArray( 159, 161, 160 ) ]
+geometry_parsed_geometry_type = 2
+agent_height = 2.0
+
+[sub_resource type="SpatialMaterial" id=13]
+flags_transparent = true
+albedo_color = Color( 1, 1, 1, 0.286275 )
+
+[sub_resource type="PlaneMesh" id=5]
+material = SubResource( 13 )
+
+[sub_resource type="SpatialMaterial" id=15]
+flags_transparent = true
+albedo_color = Color( 0.611765, 0.92549, 0.576471, 0.498039 )
+
+[sub_resource type="CubeMesh" id=14]
+material = SubResource( 15 )
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_color = Color( 0.141176, 0.905882, 0.160784, 1 )
+
+[sub_resource type="SphereMesh" id=10]
+material = SubResource( 9 )
+
+[sub_resource type="BoxShape" id=16]
+extents = Vector3( 0.200873, 1, 0.218904 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="KinematicBody" type="KinematicBody" parent="."]
+unique_name_in_owner = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.8538, 4.51992, 1.4783 )
+script = ExtResource( 1 )
+targetPath = NodePath("../Position3D")
+
+[node name="MeshInstance" type="MeshInstance" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="KinematicBody"]
+process_mode = 0
+wait_time = 0.25
+autostart = true
+
+[node name="Arrow" type="Spatial" parent="KinematicBody"]
+
+[node name="MeshInstance" type="MeshInstance" parent="KinematicBody/Arrow"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -4.21668 )
+mesh = SubResource( 12 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
+shape = SubResource( 17 )
+disabled = true
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="NavigationAgent" type="NavigationAgent" parent="KinematicBody"]
+path_max_distance = 7.3
+avoidance_enabled = true
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 48.3501, 0 )
+shadow_enabled = true
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="."]
+navmesh = SubResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="NavigationMeshInstance"]
+transform = Transform( 34.7841, 0, 0, 0, 1, 0, 0, 0, 34.7841, 0.323761, 0.338484, -0.402405 )
+mesh = SubResource( 5 )
+skeleton = NodePath("")
+
+[node name="MeshInstance2" type="MeshInstance" parent="NavigationMeshInstance"]
+transform = Transform( 4.57786, 0, 15.316, 0, 2.16124, 0, -5.28688, 0, 13.262, 0, 2.48833, 0 )
+mesh = SubResource( 14 )
+
+[node name="Position3D" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.646, 7, 28.888 )
+script = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="Position3D"]
+wait_time = 5.0
+autostart = true
+
+[node name="MeshInstance" type="MeshInstance" parent="Position3D"]
+mesh = SubResource( 10 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.957244, 0.289283, 0, -0.289283, 0.957244, 1.90735e-06, 7.78914, 45.2709 )
+current = true
+script = ExtResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CheckBox" type="CheckBox" parent="Camera"]
+margin_left = 35.0
+margin_top = 546.0
+margin_right = 59.0
+margin_bottom = 570.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Camera"]
+margin_left = 64.0
+margin_top = 551.0
+margin_right = 289.0
+margin_bottom = 566.0
+text = "Toggle Camera Follow"
+
+[node name="CheckBox2" type="CheckBox" parent="Camera"]
+margin_left = 818.0
+margin_top = 541.0
+margin_right = 842.0
+margin_bottom = 565.0
+pressed = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Camera"]
+margin_left = 850.0
+margin_top = 546.0
+margin_right = 1003.0
+margin_bottom = 571.0
+text = "Enable Arrow"
+
+[node name="StaticBody" type="StaticBody" parent="."]
+transform = Transform( 176.221, 0, 0, 0, 1, 0, 0, 0, 176.221, -0.178, -0.75, 0.031 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 16 )
+
+[connection signal="timeout" from="KinematicBody/Timer" to="KinematicBody" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Position3D/Timer" to="Position3D" method="_on_Timer_timeout"]
+[connection signal="toggled" from="Camera/CheckBox" to="Camera" method="_on_CheckBox_toggled"]
+[connection signal="toggled" from="Camera/CheckBox2" to="KinematicBody" method="_on_CheckBox2_toggled"]
